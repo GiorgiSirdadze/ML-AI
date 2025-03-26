@@ -116,7 +116,7 @@ def iterate_pagerank(corpus, damping_factor):
     n = len(corpus)
     pagerank = {}
     for page in corpus:
-        pagerank[page] = 1 / n  # Corrected initialization
+        pagerank[page] = 1 / n  
 
     threshold = 0.001
     new_pagerank = pagerank.copy()
@@ -129,7 +129,7 @@ def iterate_pagerank(corpus, damping_factor):
                     if corpus[p]:
                         total += damping_factor * (pagerank[p] / len(corpus[p]))
                     else:
-                        total += damping_factor * pagerank[p] / n # Corrected dangling node handling
+                        total += damping_factor * pagerank[p] / n 
             new_pagerank[page] = total
 
         converged = True
